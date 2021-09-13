@@ -1596,6 +1596,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 620278812a7ec451487e264628a36ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  arduinoConnector: {fileID: 1521070567}
   panel: {fileID: 887741778}
   num: {fileID: 892202429}
   scoreTxt: {fileID: 1801761738}

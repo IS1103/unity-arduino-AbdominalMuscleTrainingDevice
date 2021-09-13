@@ -23,10 +23,17 @@ public class GameLogic : MonoBehaviour
 
         arduinoConnector.receiveEvent = ReceiveEvent;
     }
-
+    int num2;
     private void ReceiveEvent(string msg)
     {
-        AddScore();
+        Debug.Log(msg+"---"+num2);
+        int _n = int.Parse(msg);
+        _n++;
+        if (_n == num2)
+        {
+            Debug.Log("============");
+            AddScore();
+        }
     }
 
     private void AddScore()
@@ -67,13 +74,14 @@ public class GameLogic : MonoBehaviour
         {
             num.text = sec.ToString();
             sec--;
-            yield return new WaitForSeconds(1f);
+            yield return new WaitForSeconds(2f);
 
             randomeIsLight = UnityEngine.Random.Range(0, 5);
             if (randomeIsLight < 3)
             {
-                Debug.Log("green");
-                item[UnityEngine.Random.Range(0, 5)].SetGreen();
+                //Debug.Log("green");
+                num2 = UnityEngine.Random.Range(0, 5);
+                item[num2].SetGreen();
             }
         }
 
